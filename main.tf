@@ -21,7 +21,7 @@ provisioner "remote-exec" {
         "sudo puppet module install hubspot-nexus"
         "sudo puppet module install maestrodev-sonarqube"
         "wget https://raw.githubusercontent.com/officialabhradip/terraform-cicd-aws/master/jenkins.pp"
-        "wget nexus.pp"
+        "wget https://raw.githubusercontent.com/officialabhradip/terraform-cicd-aws/master/nexus.pp"
         "wget sonar.pp"
         "sudo puppet apply jenkins.pp"
         "sudo apt-get install -y maven"

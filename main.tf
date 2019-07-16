@@ -30,7 +30,7 @@ provisioner "remote-exec" {
         "sudo echo 'sonar.embeddedDatabase.port:        9092' >> /usr/local/sonar/conf/sonar.properties"
         "sudo /etc/init.d/sonar start"
         "sudo rm -f /etc/maven/settings.xml"
-        "sudo wget settings.xml -O /etc/maven/settings.xml"
+        "sudo wget https://raw.githubusercontent.com/officialabhradip/terraform-cicd-aws/master/maven-settings.xml -O /etc/maven/settings.xml"
     ]
   }
   

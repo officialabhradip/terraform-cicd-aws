@@ -1,12 +1,12 @@
 provider "aws {
 access_key = ""
 secret_key = ""
-region = ""
+region = "ap-southeast-1"
 }
 
 resource "aws_instance" "cicdvm" {
-ami = ""
-instance_type = ""
+ami = "ami-04613ff1fdcd2eab1"
+instance_type = "t2.medium"
 root_block_device{
 volume_size = "50"
 }
@@ -22,7 +22,7 @@ provisioner "remote-exec" {
         "sudo puppet module install maestrodev-sonarqube"
         "wget https://raw.githubusercontent.com/officialabhradip/terraform-cicd-aws/master/jenkins.pp"
         "wget https://raw.githubusercontent.com/officialabhradip/terraform-cicd-aws/master/nexus.pp"
-        "wget sonar.pp"
+        "wget https://raw.githubusercontent.com/officialabhradip/terraform-cicd-aws/master/sonar.pp"
         "sudo puppet apply jenkins.pp"
         "sudo apt-get install -y maven"
         "sudo puppet apply nexus.pp"
